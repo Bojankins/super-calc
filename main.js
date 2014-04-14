@@ -1,76 +1,59 @@
-(function(){
-	'use strict';
+(function() {
+  'use strict';
 
-	$(document).ready(initialize);
+  $(document).ready(initialize);
 
-	function initialize () {
-		$('.number').click(display);
-		$('#clear-display').click(clear);
-		$('.decimal').click(dec);
-		$('.sign').click(sign)
-		$('#title').click(title)
-	}
+  function initialize() {
+    $('.number').click(number);
+    $('.clear').click(clear);
+    $('.decimal').click(dec);
+    $('.sign').click(sign);
+    $('#title').click(title);
+  }
 
-	function title(){
-		var display = $('#calculator').css('display');
+  function title() {
+    var display = $('#calculator').css('display');
 
-		if(display === 'none'){
-			$('#calculator').fadeIn();}
-		else{	
-			$('#calculator').fadeOut();}
-}
+    if(display === 'none'){
+      $('#calculator').fadeIn();
+    }else{
+      $('#calculator').fadeOut();
+    }
+  }
 
+  function number() {
+    var num = this.textContent;
+    var output = $('#display').text();
 
-	function display (){
-		var num = this.textContent * 1;
-		var output = $('#display').text();
-		
-		output += num;
+    if(output === '0'){
+      output = num;
+    } else {
+      output += num;
+    }
 
-		$('#display').text(output * 1);
-	}
+    $('#display').text(output);
+  }
 
-	function clear (){
-		var type = this.textContent
+  function clear() {
+    var content = this.textContent;
+    if(content === 'C'){
+      $('#display').text(0);
+    }
+  }
 
-		if(type === 'C')
-			$('#display').text(0);
-	}
+  function dec() {
+    var display = $('#display').text();
+    if (display.indexOf('.') > -1) {
+      return;
+    }
 
-	function sign (){
-		var display = $('#display').text();
-		$('display').text(display * -1)
-	}
+    $('#display').text(display + '.');
+    
+  }
 
-
-
-
- // 	function number() {
- // 		var num = this.textContent;
- // 		var output = $('#display').text();
-
- // 		if(output === '0') {
- // 			output = num;
- // 		}else{
- // 			output == num;
- // 		}
-
- // 	}
-
-
-	// function dec (){
-	// 	var display = $('#display')text();
-	// 	var noDecimal = display.indexOf('.') === -1;
-
-	// 	if(noDecimal) 
-	// 		$('#display').text(display + ('.');
-		
-	// 	}
-
-
-	
-
-
-
+  function sign() {
+    var display = $('#display').text();
+    $('#display').text(display * -1);
+  }
 
 })();
