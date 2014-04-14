@@ -20,7 +20,7 @@ table {
 #display {
   background: white;
   border: 4px solid black;
-  height: 30px;
+  height: 15px;
 }
 .button {
   border: 1px solid black;
@@ -39,4 +39,11 @@ table {
   border-radius: 5px;
   width: 30px;
   text-align: center;
+}
+#queue {
+  background: #5db5d0;
+  border: 6px solid black;
+  height: 40px;
+  width: 270px;
+  margin-top: 10px;
 }
