@@ -7,10 +7,10 @@ h1 {
 table {
   border-spacing: 10px;
   border: 6px solid black;
-  background-image: url('blacktex.jpg');
+  background-image: url('../media/blacktex.jpg');
 }
 #clear-box {
-  background: #847D92;
+  background: #5db5d0;
   border: 2px solid black;
   border-radius: 5px;
   width: 30px;
@@ -34,7 +34,7 @@ table {
   background: linear-gradient(#000000, #c0c0c0);
 }
 #push {
-  background: #847D92;
+  background: #5db5d0;
   border: 2px solid black;
   border-radius: 5px;
   width: 30px;
